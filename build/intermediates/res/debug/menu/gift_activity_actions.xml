@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:potlach="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_mark_gift_obscene"
+        android:title="@string/mark_gift_as_obscene"
+        android:actionViewClass="android.widget.Button"
+        potlach:showAsAction="never" />
+</menu><!-- From: file:/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/res/menu/gift_activity_actions.xml -->

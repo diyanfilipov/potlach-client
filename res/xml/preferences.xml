@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Settings">
+
+    <!--<PreferenceCategory android:title="Udinic Preferences" />-->
+    <!--<CheckBoxPreference android:title="Use debug server"-->
+        <!--android:key="isDebug"-->
+        <!--android:summary="Connecting to a debug server instead of prod server"/>-->
+    <!--<SwitchPreference android:title="Debug Logs" android:key="logsVerbose" android:summary="Show debug logs on LogCat"/>-->
+    <ListPreference
+        android:key="pref_updateTouchesInterval"
+        android:title="@string/pref_updateTouchesInterval_title"
+        android:dialogTitle="@string/pref_updateTouchesInterval_title"
+        android:entries="@array/pref_updateTouchesInterval_entries"
+        android:entryValues="@array/pref_updateTouchesInterval_values"
+        android:defaultValue="@string/pref_updateTouchesInterval_defaultValue" />
+
+    <CheckBoxPreference
+        android:key="pref_showObsceneGifts"
+        android:title="@string/pref_showObsceneGifts_title"
+        android:dialogTitle="@string/pref_showObsceneGifts_title"
+        android:defaultValue="false"/>
+
+
+</PreferenceScreen>

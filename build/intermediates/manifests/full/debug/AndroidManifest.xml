@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.potlach"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- client -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <!-- Authenticator -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@android:style/Theme.Holo" >
+
+        <!-- Splash screen -->
+        <!-- <activity -->
+        <!-- android:name=".ui.SplashScreenActivity" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+
+        <!-- Main Activity -->
+        <activity
+            android:name="com.android.potlach.ui.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.AppCompat" >
+
+            <!--
+            android.app.default_searchable – Defines the default searchable activity handle search. 
+            You can add this block anywhere in the manifest file either inside <application> tag or <activity> tag.
+			
+			android.app.searchable – Defines the searchable configuration which was written in searchable.xml file
+	
+			android.intent.action.SEARCH – Should be defined as a intent filter for the activity which receives the search query.
+            -->
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.android.potlach.ui.SearchResultsActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Search results activity -->
+        <activity
+            android:name="com.android.potlach.ui.SearchResultsActivity"
+            android:parentActivityName="com.android.potlach.ui.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.android.potlach.ui.CreateGiftActivity"
+            android:label="@string/title_activity_create_gift"
+            android:parentActivityName="com.android.potlach.ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.potlach.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.android.potlach.ui.ViewGiftActivity"
+            android:parentActivityName="com.android.potlach.ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.potlach.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.android.potlach.ui.SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName="com.android.potlach.ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.potlach.ui.MainActivity" />
+        </activity>
+
+        <!-- Authenticator related activities and service needs to be declared here in order for the app to recognize them -->
+        <activity
+            android:name="com.android.potlach.security.SignInActivity"
+            android:label="Login" />
+        <activity
+            android:name="com.android.potlach.security.SignUpActivity"
+            android:label="Register" />
+
+        <service android:name="com.android.potlach.security.PotlachAuthenticatorService" >
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <service
+            android:name="com.android.potlach.service.PotlachService"
+            android:label="PotlachService" >
+        </service>
+
+        <!-- <activity -->
+        <!-- android:name=".ui.SplashScreenActivity" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+        <!-- android:label="@string/title_activity_splash_screen" -->
+        <!-- android:theme="@style/FullscreenTheme" > -->
+        <!-- </activity> -->
+    </application>
+
+</manifest>

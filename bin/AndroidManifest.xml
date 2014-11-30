@@ -1,0 +1,86 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.potlach"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="18" />
+    
+     <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo" >
+        
+        <activity
+            android:theme="@style/Theme.AppCompat"
+            android:name=".ui.MainActivity"
+            android:label="@string/title_activity_main" >
+            <!-- 
+            android.app.default_searchable – Defines the default searchable activity handle search. 
+            You can add this block anywhere in the manifest file either inside <application> tag or <activity> tag.
+			
+			android.app.searchable – Defines the searchable configuration which was written in searchable.xml file
+	
+			android.intent.action.SEARCH – Should be defined as a intent filter for the activity which receives the search query. -->
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.android.potlach.ui.SearchResultsActivity" />
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Search results activity -->
+        <activity android:name="com.android.potlach.ui.SearchResultsActivity"
+            android:parentActivityName=".ui.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+ 
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        
+    </application>
+    
+    <!-- <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="edu.vuum.mocca.ui.story.StoryListActivity"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        THIS IS THE CREATION ACTIVITY
+        <activity android:name="edu.vuum.mocca.ui.story.CreateStoryActivity" >
+        </activity>
+        THIS IS THE SINGLE VIEW ACTIVITY
+        <activity android:name="edu.vuum.mocca.ui.story.ViewStoryActivity" >
+        </activity>
+        THIS IS THE EDIT ACTIVITY
+        <activity android:name="edu.vuum.mocca.ui.story.EditStoryActivity" >
+        </activity>
+        <activity
+            android:name="edu.vanderbilt.mooc.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="edu.vuum.mocca.ui.story.SoundRecordActivity"
+            android:label="@string/title_activity_sound_record" >
+        </activity>
+    </application> -->
+
+</manifest>

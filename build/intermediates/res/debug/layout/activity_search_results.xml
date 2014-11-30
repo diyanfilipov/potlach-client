@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/search_results_container"
+    tools:context="com.android.potlach.ui.MainActivity" >
+ 
+    <!--<TextView-->
+        <!--android:id="@+id/txtQuery"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <GridView
+            android:numColumns="auto_fit"
+            android:gravity="center"
+            android:columnWidth="100dp"
+            android:stretchMode="columnWidth"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/grid"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</FrameLayout>
+<!-- From: file:/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/res/layout/activity_search_results.xml -->

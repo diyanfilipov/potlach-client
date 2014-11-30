@@ -1,0 +1,114 @@
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="Gift Image"/>
+
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignBounds"
+        android:columnOrderPreserved="false"
+        android:columnCount="2"
+        android:layout_above="@+id/linearButton"
+        android:layout_below="@+id/imageView">
+
+        <TextView
+            android:text="Title"
+            android:layout_column="0"
+            android:layout_gravity="right"/>
+
+        <EditText
+            android:id="@+id/edit_title"
+            android:layout_column="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:maxLength="20"
+            android:ems="10"/>
+
+        <TextView
+            android:text="Description"
+            android:layout_column="0"
+            android:layout_gravity="end"/>
+
+        <EditText
+            android:id="@+id/edit_description"
+            android:maxLines="4"
+            android:lines="4"
+            android:maxLength="200"
+            android:ems="10"/>
+
+        <TextView
+            android:text="Gift Chain"
+            android:layout_column="0"
+            android:layout_gravity="end"/>
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner"-->
+            <!--android:layout_column="1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_gravity="fill_horizontal"/>-->
+        <AutoCompleteTextView
+            android:id="@+id/gift_chains"
+            android:layout_width="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:ems="10" />
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/linearButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/potlach"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_upload" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Gift"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!--<Button-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Upload Gift"-->
+        <!--android:id="@+id/upload_gift"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:drawableLeft="@drawable/ic_action_upload"-->
+        <!--android:gravity="center_horizontal"/>-->
+
+
+
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent">-->
+
+        <!---->
+        <!---->
+    <!--</LinearLayout>-->
+
+</RelativeLayout>

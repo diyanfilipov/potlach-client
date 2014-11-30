@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="19.1.0"><source path="/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/assets"/></dataSet><dataSet config="main"><source path="/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/assets"/></dataSet><dataSet config="release"><source path="/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/build-types/release/assets"/></dataSet></merger>

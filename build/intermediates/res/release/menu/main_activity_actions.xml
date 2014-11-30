@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    	xmlns:potlach="http://schemas.android.com/apk/res-auto">
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_search"
+          android:icon="@drawable/ic_action_search"
+          android:title="@string/action_search"
+          potlach:actionViewClass="android.widget.SearchView"
+          potlach:showAsAction="ifRoom" />
+    <!-- Create Gift, should appear as action button -->
+    <item android:id="@+id/action_upload_gift"
+        android:icon="@drawable/ic_action_new_picture"
+        android:title="@string/action_upload_gift"
+        potlach:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_upload_take_photo"
+                android:title="@string/action_upload_create_new" />
+            <item
+                android:id="@+id/action_upload_from_gallery"
+                android:title="@string/action_upload_from_gallery" />
+        </menu>
+    </item>
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          potlach:showAsAction="never" />
+    
+    <item android:id="@+id/action_profile"
+          android:title="@string/action_profile"
+          potlach:showAsAction="never" />
+    
+    <item android:id="@+id/action_about"
+          android:title="@string/action_about"
+          potlach:showAsAction="never" />
+
+    <item android:id="@+id/action_logout"
+          android:title="@string/action_logout"
+          potlach:showAsAction="never" />
+    
+</menu>
+<!-- From: file:/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/res/menu/main_activity_actions.xml -->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1">
+            <GridView
+                android:numColumns="auto_fit"
+                android:gravity="center"
+                android:columnWidth="100dp"
+                android:stretchMode="columnWidth"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/grid"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"/>
+    </android.support.v4.widget.SwipeRefreshLayout><!-- From: file:/Users/diyanfilipov/dev/eclipseWorkspace/Potlach/res/layout/gifts_grid.xml -->
